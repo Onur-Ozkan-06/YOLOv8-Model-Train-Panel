@@ -109,7 +109,45 @@ names:
 
 ```
 
----
+
+### 📌 How to Create a Desktop Shortcut
+
+> **⚠️ IMPORTANT:** Do not move the `.bat` file out of the project folder!
+> If you move the file itself to the Desktop, it will lose the connection to `app.py`, and the application will fail to start.
+
+**To run the app from your Desktop correctly:**
+
+1.  **Right-click** on the `.bat` file inside the project folder.
+2.  Select **Send to** > **Desktop (create shortcut)**.
+3.  You can now safely rename or move this **shortcut** anywhere you like.
+
+```
+
+### Recommendation for your `.bat` file
+
+To make your batch file even more robust (just in case someone ignores the warning), I strongly recommend updating the content of your `.bat` file to this. The command `cd /d "%~dp0"` forces the script to look inside its own folder, no matter where it is called from:
+
+```batch
+@echo off
+:: Fix character encoding
+chcp 65001 > nul
+
+:: Set the working directory to the folder where this file is located
+cd /d "%~dp0"
+
+:: Activate venv if it exists (optional)
+if exist "venv\Scripts\activate.bat" (
+    call venv\Scripts\activate.bat
+)
+
+:: Run the app
+python -m streamlit run app.py
+pause
+
+```
+
+
+
 
 ## 🔧 Troubleshooting
 
