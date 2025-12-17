@@ -1,15 +1,25 @@
 @echo off
-::chcp 65001 > nul
+:: Türkçe karakterleri düzelt
+chcp 65001 > nul
 
-::set PROJEYOLU=C:\Users\onurz\OneDrive\Masaüstü\PPE_PYTHON
+:: Çalışma dizinini, bu .bat dosyasının bulunduğu klasör yap
+cd /d "%~dp0"
 
-::if not exist "%PROJEYOLU%" (
-::    echo KLASOR BULUNAMADI:
-::    echo %PROJEYOLU%
-::    pause
-::    exit
-::)
+:: Sanal ortam varsa aktif et (Opsiyonel ama iyi olur)
+if exist "venv\Scripts\activate.bat" (
+    call venv\Scripts\activate.bat
+)
 
-::pushd "%PROJEYOLU%"
+:: Başlık
+title YOLOv8 Egitim Paneli
+
+echo.
+echo ==========================================
+echo   YOLOv8 Egitim Paneli Baslatiliyor...
+echo ==========================================
+echo.
+
+:: Uygulamayı çalıştır
 python -m streamlit run app.py
+
 pause
