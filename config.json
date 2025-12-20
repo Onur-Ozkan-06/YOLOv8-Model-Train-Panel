@@ -1,6 +1,6 @@
 {
-    "dataset_path": "D:\\Dataset\\PPE_DATASETS\\NewPPE25-3212_Ham_Veri",
-    "data_yaml": "D:\\Dataset\\PPE_DATASETS\\NewPPE25-3212_Ham_Veri\\data.yaml",
-    "val_images": "D:\\Dataset\\PPE_DATASETS\\NewPPE25-3212_Ham_Veri\\valid\\images",
-    "model_path": "C:\\Users\\onurz\\OneDrive\\Masaüstü\\PPE_PYTHON\\runs\\detect"
+    "dataset_path": "",
+    "data_yaml": "",
+    "val_images": "",
+    "model_path": ""
 }
